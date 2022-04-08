@@ -79,6 +79,7 @@ def _apply_kerneL_multivariate(
 
     return np.float32(_ppv / output_length), np.float32(_max)
 
+
 @njit(
     "float32[:,:](float32[:,:,:],Tuple((float32[::1],int32[:],float32[:],"
     "int32[:],int32[:],int32[:],int32[:])))",
@@ -101,7 +102,8 @@ def _apply_kernels(X, kernels):
     num_kernels = len(lengths)
 
     _X = np.zeros(
-        (n_instances, num_kernels * 2), dtype=np.float32,
+        (n_instances, num_kernels * 2),
+        dtype=np.float32,
     )
 
     for i in prange(n_instances):

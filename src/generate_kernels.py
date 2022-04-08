@@ -2,7 +2,7 @@ import numpy as np
 
 from numba import njit, prange
 
-from benfords_rocket.src.benfords_generator import BenfordRandom
+from benfords_generator import BenfordRandom
 
 import random
 
